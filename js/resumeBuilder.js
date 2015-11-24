@@ -96,6 +96,18 @@ jQuery(function(){
             var education = octopus.getEducation();
             var work = octopus.getWork();
             var projects = octopus.getProjects();
+
+            this.setHeader(bio);
+
+            var workExperience = jQuery("#workExperience");
+
+            jQuery(workExperience).append(HTMLworkStart);
+
+        },
+        setHeader: function(bio) {
+            var header = jQuery("#header");
+            jQuery(header).prepend(HTMLheaderRole.replace("%data%", bio.role));
+            jQuery(header).prepend(HTMLheaderName.replace("%data%", bio.name));
         }
     };
 
